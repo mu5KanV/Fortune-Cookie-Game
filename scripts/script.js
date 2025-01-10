@@ -1,11 +1,16 @@
 import {fortunes} from "./fortunes.js";
 
 const cookie = document.querySelector('.js-cookie');
+const crackSound = new Audio('../sounds/cracking.wav');
 const fortuneDisplay = document.querySelector('.js-fortune');
 const resetBtn= document.querySelector('.js-reset-btn');
 
 
 cookie.addEventListener('click', () => {
+  // Play the cracking sound
+  
+  crackSound.playbackRate = 1.5;
+  crackSound.play();
   // Generate a random fortune
   const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
 
